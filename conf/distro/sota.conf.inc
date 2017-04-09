@@ -1,6 +1,8 @@
 DISTRO_FEATURES_append = " sota"
 OVERRIDES .= ":sota"
 
+HOSTTOOLS_append = " sync sha256sum"
+
 IMAGE_INSTALL_append = " ostree os-release"
 
 # live image for OSTree-enabled systems
