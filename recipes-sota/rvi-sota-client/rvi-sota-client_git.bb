@@ -11,13 +11,13 @@ S = "${WORKDIR}/git"
 # When changing this, don't forget to:
 # 1) Update PV
 # 2) Check that Cargo.lock hasn't changed with git diff old..new Cargo.lock
-SRCREV = "0d092c218c823fe38e59e7ecb4589c3770dc6448"
+SRCREV = "d64be93cc5da9b5399c7d381fd7a0a6f1b13bc3c"
 
 # Generate with:
 #   git describe --tags | cut -b2-
 # or from the rvi_sota_client repo:
 #   make package-version
-PV = "0.2.32-186-g313ba1a"
+PV = "0.2.32-192-gd64be93"
 
 BBCLASSEXTEND = "native"
 
@@ -30,8 +30,6 @@ FILES_${PN} = " \
                 ${bindir}/sota_prov.sh \
                 ${sysconfdir}/sota_client.version \
                 ${sysconfdir}/sota_certificates \
-                /var/sota/sota_provisioning_credentials.p12 \
-                /var/sota/sota_provisioning_url.env \
                 ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', '${systemd_unitdir}/system/sota_client_autoprovision.service', '', d)} \
                 ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', '${systemd_unitdir}/system/sota_client.service', '', d)} \
               "
