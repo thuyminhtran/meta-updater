@@ -62,7 +62,8 @@ grep -q smackfs /proc/filesystems && {
 mkdir -p /sysroot
 ostree_sysroot=$(get_ostree_sysroot)
 
-mount $ostree_sysroot /sysroot || bail_out "Unable to mount $ostree_sysroot as physical sysroot"
+mount $ostree_sysroot /sysroot || (sleep 5 ;
+mount $ostree_sysroot /sysroot || bail_out "Unable to mount $ostree_sysroot as physical sysroot")
 ostree-prepare-root /sysroot
 
 # move mounted devices to new root
