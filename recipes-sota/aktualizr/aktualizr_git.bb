@@ -14,7 +14,7 @@ SRC_URI = " \
   file://sota_autoprov.toml \
   "
 SRCREV = "c24f1fc9b600113cf9f2d3d7215e406cbbb70ac4"
-PV = "1.0+git${SRCPV}"
+PR = "4"
 
 S = "${WORKDIR}/git"
 SYSTEMD_SERVICE_${PN} = "aktualizr.service"

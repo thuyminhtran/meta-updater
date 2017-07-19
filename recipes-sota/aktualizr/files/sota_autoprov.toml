@@ -14,5 +14,5 @@ private_key_path = "ecukey.der"
 public_key_path = "ecukey.pub"
 
 [provision]
-p12_path = "sota_provisioning_credentials.p12"
+provision_path = "/var/sota/sota_provisioning_credentials.zip"
 
