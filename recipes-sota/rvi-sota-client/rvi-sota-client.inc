@@ -12,15 +12,13 @@ S = "${WORKDIR}/git"
 SRC_URI[index.md5sum] = "6a635e8a081b4d4ba4cebffd721c2d7d"
 SRC_URI[index.sha256sum] = "1913c41d4b8de89a931b6f9e418f83e70a083e12e6c247e8510ee932571ebae2"
 
-# also update PV and SRC_URI crates when updating SRCREV
-SRCREV = "1755f1d5df05cd2924b8cf505f537f04c24f568f"
-
-# generate with: `make package-version`
-PV = "0.2.33-56-g1755f1d"
-
-# generate with: `make yocto-version`
+# generate SRCREV with: `git rev-parse HEAD`
+SRCREV = "3330be0e8ea69582e5f503130e008697a22edc96"
+# generate PV with: `make package-version`
+PV = "0.2.33-60-g3330be0"
+# generate crates with: `make yocto-version`
 SRC_URI = " \
-git://github.com/advancedtelematic/rvi_sota_client \
+git://github.com/advancedtelematic/rvi_sota_client;branch=refactor/PRO-3362/manifests-field \
 file://sota-client-autoprovision.service \
 file://sota-client-ostree.service \
 file://sota-client-uptane.service \
