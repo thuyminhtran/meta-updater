@@ -23,11 +23,10 @@ inherit cmake systemd
 
 EXTRA_OECMAKE = "-DWARNING_AS_ERROR=OFF -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DBUILD_OSTREE=ON -DAKTUALIZR_VERSION=${PV}"
 
-export SOTA_AUTOPROVISION_CREDENTIALS
 export SOTA_PACKED_CREDENTIALS
 
 do_install_append() {
-    if [ -n "${SOTA_AUTOPROVISION_CREDENTIALS}" -o -n "${SOTA_PACKED_CREDENTIALS}" ]; then
+    if [ -n "${SOTA_PACKED_CREDENTIALS}" ]; then
       install -d ${D}/${systemd_unitdir}/system
       install -m 0644 ${WORKDIR}/aktualizr-autoprovision.service ${D}/${systemd_unitdir}/system/aktualizr.service
       install -d ${D}/usr/lib/sota
