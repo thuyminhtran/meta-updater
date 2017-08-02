@@ -13,14 +13,15 @@ SRC_URI[index.md5sum] = "6a635e8a081b4d4ba4cebffd721c2d7d"
 SRC_URI[index.sha256sum] = "1913c41d4b8de89a931b6f9e418f83e70a083e12e6c247e8510ee932571ebae2"
 
 # also update PV and SRC_URI crates when updating SRCREV
-SRCREV = "b9170dfd92981505c77f8f6e51d477eb1ec57071"
+SRCREV = "c85b23de60c628d0e3f8a55ecec6f32f5b31e0fa"
+PR = "1"
 
 # generate with: `make package-version`
-PV = "0.2.33-61-gb9170df"
+PV = "0.2.33-64-gc85b23d"
 
 # generate with: `make yocto-version`
 SRC_URI = " \
-git://github.com/advancedtelematic/rvi_sota_client \
+git://github.com/advancedtelematic/rvi_sota_client;branch=bugfix/PRO-3484/avoid-build-unzip \
 file://sota-client-autoprovision.service \
 file://sota-client-ostree.service \
 file://sota-client-uptane.service \
